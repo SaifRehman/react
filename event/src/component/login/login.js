@@ -9,6 +9,10 @@ import {
 } from 'react-native';
 import LoginForm from './loginForm';
  class Login extends Component {
+   constructor(props){
+     super(props);
+     console.log(this.props.navigator) // it should be passing to here now
+   }
   render() {
     return (
       <KeyboardAvoidingView behavior = "padding" style={styles.container}>
@@ -22,7 +26,7 @@ import LoginForm from './loginForm';
         </Text>
       </View>
       <View style={styles.form}>
-        <LoginForm></LoginForm>
+        <LoginForm navigator={this.props.navigator}></LoginForm>
       </View>
       </KeyboardAvoidingView>
       
